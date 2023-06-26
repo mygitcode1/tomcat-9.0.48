@@ -1,0 +1,11 @@
+1. conf/tomcat-users.xml
+<tomcat-users>
+<role rolename="manager-gui"/>
+<user username="tomcat" password="Tomcat" roles="manager-gui, manager-script, manager-status"/>
+</tomcat-users>
+
+2. conf/server.xml
+connector port=2020
+
+3.webapps/manager/META-INF/context.xml
+Replace allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> with allow=".*" />	To access it from all ips
